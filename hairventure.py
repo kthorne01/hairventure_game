@@ -132,7 +132,7 @@ while True:
     if not play_again():
         break  # Exit the loop if the player chooses not to play again
 
-print("Thank you for playing! Goodbye!")
+print("Thanks for playing and may the odds be in your favor when you play again!")
 
 
 
