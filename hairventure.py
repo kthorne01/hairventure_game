@@ -87,7 +87,7 @@ def try_another_method():
         display_slow("The stylist at the salon quickly comes to your rescue and safely removes the gum from your hair.")
         display_slow("Phew! Crisis averted thanks to the expert hands of the stylist.")
         game_ending_successful()
-
+#Letting player choose to call mom
 def call_mom():
             display_slow("You call your mom, and she suggests using peanut butter to remove the gum or letting her call her favorite stylist to see if she can get you in today.")
             response = get_player_choice("Enter 1 to try using peanut butter.\nEnter 2 to let your mom call the stylist.\nYour choice: ", ["1", "2"])
@@ -130,7 +130,7 @@ while True:
         call_mom()
 
     if not play_again():
-        break  # Exit the loop if the player chooses not to play again
+        break  # Stop loop if the player chooses not to play again
 
 print("Thanks for playing and may the odds be in your favor when you play again!")
 
