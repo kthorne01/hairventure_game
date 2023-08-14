@@ -1,10 +1,12 @@
-#this version is not printing the statement for if they don't want to play again
-
 import time
 import random
 
+# this version is not printing the statement...
+# .... for if they don't want to play again
 
 # Keeping code dry by creating function to reduce addt'l code lines
+
+
 def display_slow(text, delay=2):
     print(text, flush=True)
     time.sleep(delay)
@@ -52,36 +54,36 @@ def game_ending_successful2():
 
 # Give the player choices to make
 def take_gum_out():
-        display_slow("You decide to take the gum out of your hair yourself. Now you need to figure out which method of removal you will use.")
-        display_slow("Do you want to try using ice cubes or scissors?")
-        display_slow("Enter 1 to use ice cubes.\nEnter 2 to use scissors.")
-        response = get_player_choice("Your choice: ", ["1", "2"])
+    display_slow("You decide to take the gum out of your hair yourself. Now you need to figure out which method of removal you will use.")
+    display_slow("Do you want to try using ice cubes or scissors?")
+    display_slow("Enter 1 to use ice cubes.\nEnter 2 to use scissors.")
+    response = get_player_choice("Your choice: ", ["1", "2"])
 
-        if response == "1":
+    if response == "1":
         # Give player random chance of ice cubes working successfully or not
-            if random.choice([True, False]):
-                display_slow("You grab a couple of ice cubes from the freezer and gently rub them on the gum stuck in your hair.")
-                display_slow("After a few minutes, the gum hardens and becomes easier to remove.")
-                display_slow("You successfully remove the gum from your hair without any major mishaps.")
-                game_ending_successful()
-            else:
-                display_slow("You grab a couple of ice cubes from the freezer and try to rub them on the gum.")
-                display_slow("Unfortunately, the gum seems to become even stickier, making it harder to remove.")
-                display_slow("You decide to try another method to remove the gum.")
+        if random.choice([True, False]):
+            display_slow("You grab a couple of ice cubes from the freezer and gently rub them on the gum stuck in your hair.")
+            display_slow("After a few minutes, the gum hardens and becomes easier to remove.")
+            display_slow("You successfully remove the gum from your hair without any major mishaps.")
+            game_ending_successful()
+        else:
+            display_slow("You grab a couple of ice cubes from the freezer and try to rub them on the gum.")
+            display_slow("Unfortunately, the gum seems to become even stickier, making it harder to remove.")
+            display_slow("You decide to try another method to remove the gum.")
             # Give player option to try something else
-                try_another_method()
-        elif response == "2":
-            if random.choice([True, False]):
-                display_slow("You locate a pair of scissors in the bathroom and consider using them to cut the gum out of your hair.")
-                display_slow("However, you get a little nervous about the idea of cutting your hair and decide not to go through with it.")
-                display_slow("Instead, you choose to style your hair so the gum can't be seen and you'll figure out your next steps after you're finished working for the day.")
-                game_ending_successful2()
-            else:
-                display_slow("You have no idea what you're doing and you cut more hair than you needed to cut.")
-                display_slow("You keep cutting to try and even out your uneven snips.")
-                display_slow("Before you know it, you have cut so much that you are at a point of no return.")
-                display_slow("You look like a crazy person and there's no way you're leaving the house again until you get a wig or salon appointment.")
-                game_ending_unsuccessful()
+            try_another_method()
+    elif response == "2":
+        if random.choice([True, False]):
+            display_slow("You locate a pair of scissors in the bathroom and consider using them to cut the gum out of your hair.")
+            display_slow("However, you get a little nervous about the idea of cutting your hair and decide not to go through with it.")
+            display_slow("Instead, you choose to style your hair so the gum can't be seen and you'll figure out your next steps after you're finished working for the day.")
+            game_ending_successful2()
+        else:
+            display_slow("You have no idea what you're doing and you cut more hair than you needed to cut.")
+            display_slow("You keep cutting to try and even out your uneven snips.")
+            display_slow("Before you know it, you have cut so much that you are at a point of no return.")
+            display_slow("You look like a crazy person and there's no way you're leaving the house again until you get a wig or salon appointment.")
+            game_ending_unsuccessful()
 
 
 def try_another_method():
@@ -105,25 +107,27 @@ def try_another_method():
 
 # Letting player choose to call mom
 def call_mom():
-            display_slow("You call your mom, and she suggests using peanut butter to remove the gum or letting her call her favorite stylist to see if she can get you in today.")
-            response = get_player_choice("Enter 1 to try using peanut butter.\nEnter 2 to let your mom call the stylist.\nYour choice: ", ["1", "2"])
-            if response == "1":
-                display_slow("You grab a jar of peanut butter from the kitchen and apply a small amount to the gum.")
-                display_slow("To your surprise, the gum loosens and comes out of your hair with ease.")
-                display_slow("Your mom's advice turned out to be a lifesaver!")
-                game_ending_successful()
-            elif response == "2":
-                display_slow("Your mom calls her favorite stylist, and luckily, the stylist has an open slot today.")
-                display_slow("You head over to the stylist, and she skillfully removes the gum from your hair.")
-                display_slow("Crisis averted, thanks to your mom's help!")
-                game_ending_successful()
+    display_slow("You call your mom, and she suggests using peanut butter to remove the gum or letting her call her favorite stylist to see if she can get you in today.")
+    response = get_player_choice("Enter 1 to try using peanut butter.\nEnter 2 to let your mom call the stylist.\nYour choice: ", ["1", "2"])
+    if response == "1":
+        display_slow("You grab a jar of peanut butter from the kitchen and apply a small amount to the gum.")
+        display_slow("To your surprise, the gum loosens and comes out of your hair with ease.")
+        display_slow("Your mom's advice turned out to be a lifesaver!")
+        game_ending_successful()
+    elif response == "2":
+        display_slow("Your mom calls her favorite stylist, and luckily, the stylist has an open slot today.")
+        display_slow("You head over to the stylist, and she skillfully removes the gum from your hair.")
+        display_slow("Crisis averted, thanks to your mom's help!")
+        game_ending_successful()
 
 
 # Need to know if player wants to play again
 def play_again():
     return input("Would you like a do over? (yes/no): ").lower() == "yes"
 
+
 def main_game():
+
     # Beginning point for game
     display_slow("You awake to the sweet, calming smell of lavender and chamomile. You're still lying in bed.")
     display_slow("You're so glad your friend bought that diffuser to help you relax.")
@@ -152,5 +156,6 @@ def main_game():
     main_game()
 
 # Start the game by calling the main_game function
-main_game()
 
+
+main_game()
