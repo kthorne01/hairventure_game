@@ -1,9 +1,6 @@
 import time
 import random
 
-# this version is not printing the statement...
-# .... for if they don't want to play again
-
 # Keeping code dry by creating function to reduce addt'l code lines
 
 
@@ -28,7 +25,7 @@ def game_ending_successful():
     display_slow("With the gum crisis averted, you quickly get ready.")
     display_slow("You head to your office for the meeting.")
     display_slow("You enter the building"
-                 " and your colleages are gathered in the conference room.")
+                 " and your colleagues are gathered in the conference room.")
     display_slow("The meeting starts.")
     display_slow("You impress everyone with your"
                  " fabulousness, preparedness, and brilliant ideas.")
@@ -179,8 +176,19 @@ def call_mom():
 
 
 # Need to know if player wants to play again
+# def play_again():
+#     return input("Would you like a do over? (yes/no): ").lower() == "yes"
+
 def play_again():
-    return input("Would you like a do over? (yes/no): ").lower() == "yes"
+    while True:
+        response = input("Would you like a do over? (yes/no): ").lower()
+        if response == "yes":
+            return True
+        elif response == "no":
+            return False
+        else:
+            print("Invalid choice. Please enter 'yes' or 'no'.")
+
 
 
 def main_game():
